@@ -83,11 +83,11 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold));
-			this->label1->Location = System::Drawing::Point(199, 9);
+			this->label1->Location = System::Drawing::Point(182, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(387, 31);
+			this->label1->Size = System::Drawing::Size(421, 31);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Информация о сообщениях";
+			this->label1->Text = L"Інформація про повідомлення";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// pictureBox1
@@ -108,9 +108,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label3->Location = System::Drawing::Point(493, 171);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(271, 31);
+			this->label3->Size = System::Drawing::Size(267, 31);
 			this->label3->TabIndex = 5;
-			this->label3->Text = L"Средняя задержка";
+			this->label3->Text = L"Середня затримка";
 			// 
 			// textBox1
 			// 
@@ -143,11 +143,11 @@ namespace Project1 {
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label4->Location = System::Drawing::Point(265, 396);
+			this->label4->Location = System::Drawing::Point(240, 396);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(254, 31);
+			this->label4->Size = System::Drawing::Size(304, 31);
 			this->label4->TabIndex = 11;
-			this->label4->Text = L"Найти сообщение";
+			this->label4->Text = L"Знайти повідомлення";
 			// 
 			// textBox2
 			// 
@@ -165,13 +165,13 @@ namespace Project1 {
 			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->Location = System::Drawing::Point(314, 500);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(157, 44);
 			this->button3->TabIndex = 13;
-			this->button3->Text = L"Поиск";
+			this->button3->Text = L"Пошук";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &Info::button3_Click);
 			// 
@@ -232,13 +232,13 @@ namespace Project1 {
 			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button4->Location = System::Drawing::Point(12, 387);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(149, 40);
 			this->button4->TabIndex = 17;
-			this->button4->Text = L"Сортировать";
+			this->button4->Text = L"Сортувати";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &Info::button4_Click);
 			// 
@@ -273,7 +273,7 @@ namespace Project1 {
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
-			this->Text = L"Информация";
+			this->Text = L"Інформація";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();

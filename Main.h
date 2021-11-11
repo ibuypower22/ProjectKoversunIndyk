@@ -82,11 +82,11 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold));
-			this->label1->Location = System::Drawing::Point(225, 67);
+			this->label1->Location = System::Drawing::Point(230, 67);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(335, 31);
+			this->label1->Size = System::Drawing::Size(325, 31);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Текущая задержка (мс)";
+			this->label1->Text = L"Поточна затримка (мс)";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// pictureBox1
@@ -117,11 +117,11 @@ namespace Project1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label3->Location = System::Drawing::Point(250, 305);
+			this->label3->Location = System::Drawing::Point(237, 305);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(284, 31);
+			this->label3->Size = System::Drawing::Size(311, 31);
 			this->label3->TabIndex = 4;
-			this->label3->Text = L"Введите сообщение";
+			this->label3->Text = L"Введіть повідомлення";
 			// 
 			// textBox1
 			// 
@@ -140,13 +140,13 @@ namespace Project1 {
 			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(231, 403);
+			this->button2->Location = System::Drawing::Point(225, 403);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(157, 44);
+			this->button2->Size = System::Drawing::Size(163, 44);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"Отправить";
+			this->button2->Text = L"Відправити";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Main::button2_Click);
 			// 
@@ -156,13 +156,13 @@ namespace Project1 {
 			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->Location = System::Drawing::Point(394, 403);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(157, 44);
+			this->button3->Size = System::Drawing::Size(161, 44);
 			this->button3->TabIndex = 7;
-			this->button3->Text = L"Сброс";
+			this->button3->Text = L"Скасувати";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &Main::button3_Click);
 			// 
@@ -227,7 +227,7 @@ namespace Project1 {
 			this->Name = L"Main";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
-			this->Text = L"Главная";
+			this->Text = L"Головна";
 			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);

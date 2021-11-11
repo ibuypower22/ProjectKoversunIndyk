@@ -86,13 +86,13 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(21, 27);
+			this->label1->Location = System::Drawing::Point(42, 31);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(542, 36);
+			this->label1->Size = System::Drawing::Size(501, 32);
 			this->label1->TabIndex = 19;
-			this->label1->Text = L"Сведения о создателях программы";
+			this->label1->Text = L"Відомості про розробників програми";
 			// 
 			// label2
 			// 
@@ -102,9 +102,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label2->Location = System::Drawing::Point(54, 79);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(409, 31);
+			this->label2->Size = System::Drawing::Size(389, 31);
 			this->label2->TabIndex = 20;
-			this->label2->Text = L"Высшее учебное заведение: ";
+			this->label2->Text = L"Вищий навчальний заклад: ";
 			// 
 			// label3
 			// 
@@ -114,9 +114,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label3->Location = System::Drawing::Point(80, 113);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(423, 31);
+			this->label3->Size = System::Drawing::Size(376, 31);
 			this->label3->TabIndex = 21;
-			this->label3->Text = L"НУ «Запорожская политехника»";
+			this->label3->Text = L"НУ «Запорізька політехніка»";
 			// 
 			// label4
 			// 
@@ -138,9 +138,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label5->Location = System::Drawing::Point(80, 181);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(286, 31);
+			this->label5->Size = System::Drawing::Size(249, 31);
 			this->label5->TabIndex = 23;
-			this->label5->Text = L"Компьютерные науки";
+			this->label5->Text = L"Комп\'ютерні науки";
 			// 
 			// label6
 			// 
@@ -150,9 +150,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label6->Location = System::Drawing::Point(54, 215);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(118, 31);
+			this->label6->Size = System::Drawing::Size(102, 31);
 			this->label6->TabIndex = 24;
-			this->label6->Text = L"Группа:";
+			this->label6->Text = L"Група:";
 			// 
 			// label7
 			// 
@@ -175,9 +175,9 @@ namespace Project1 {
 			this->label8->ForeColor = System::Drawing::Color::Indigo;
 			this->label8->Location = System::Drawing::Point(54, 335);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(212, 31);
+			this->label8->Size = System::Drawing::Size(184, 31);
 			this->label8->TabIndex = 26;
-			this->label8->Text = L"Разработчики:";
+			this->label8->Text = L"Розробники:";
 			// 
 			// label9
 			// 
@@ -188,9 +188,9 @@ namespace Project1 {
 			this->label9->ForeColor = System::Drawing::Color::Indigo;
 			this->label9->Location = System::Drawing::Point(80, 369);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(296, 31);
+			this->label9->Size = System::Drawing::Size(299, 31);
 			this->label9->TabIndex = 27;
-			this->label9->Text = L"* Коверсун Александр";
+			this->label9->Text = L"* Коверсун Олександр";
 			// 
 			// label10
 			// 
@@ -201,9 +201,9 @@ namespace Project1 {
 			this->label10->ForeColor = System::Drawing::Color::Indigo;
 			this->label10->Location = System::Drawing::Point(80, 403);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(217, 31);
+			this->label10->Size = System::Drawing::Size(192, 31);
 			this->label10->TabIndex = 28;
-			this->label10->Text = L"* Индык Андрей";
+			this->label10->Text = L"* Індик Андрій";
 			// 
 			// Developers
 			// 
@@ -227,7 +227,7 @@ namespace Project1 {
 			this->Name = L"Developers";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Разработчики";
+			this->Text = L"Розробники";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

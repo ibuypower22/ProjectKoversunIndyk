@@ -14,25 +14,25 @@ String^ Info::decrypt(String^ input)
         messagechar[i] = Convert::ToChar(messagestr[i]);
     }
 
-    wchar_t* rus = L"אבגדהו¸זחטיךכלםמןנסעףפץצקרשתûü‎‏ÿ";
-    wchar_t* RUS = L"ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞ‗";
+    wchar_t* crl = L"אבגדהו¸זחטיךכלםמןנסעףפץצקרשתûü‎‏ÿ´÷³¿";
+    wchar_t* CRL = L"ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞ‗¥×²¯";
     wchar_t* eng = L"abcdefghijklmnopqrstuvwxyz";
     wchar_t* ENG = L"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     wchar_t* numbers = L"0123456789";
 
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < 33; j++)
+        for (int j = 0; j < 37; j++)
         {
             int iter = j - 5;
-            if (messagechar[i] == rus[j])
+            if (messagechar[i] == crl[j])
             {
-                messagechar[i] = rus[(iter+33) % 33];
+                messagechar[i] = crl[(iter+37) % 37];
                 break;
             }
-            if (messagechar[i] == RUS[j])
+            if (messagechar[i] == CRL[j])
             {
-                messagechar[i] = RUS[(iter+33) % 33];
+                messagechar[i] = CRL[(iter+37) % 37];
                 break;
             }
             if (messagechar[i] == eng[j])

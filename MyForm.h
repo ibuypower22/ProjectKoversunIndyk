@@ -76,9 +76,9 @@ namespace Project1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold));
 			this->label1->Location = System::Drawing::Point(261, 104);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(93, 31);
+			this->label1->Size = System::Drawing::Size(84, 31);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Логин";
+			this->label1->Text = L"Логін";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// label2
@@ -89,9 +89,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label2->Location = System::Drawing::Point(281, 178);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(71, 31);
+			this->label2->Size = System::Drawing::Size(65, 31);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Имя";
+			this->label2->Text = L"Ім\'я";
 			// 
 			// label3
 			// 
@@ -101,9 +101,9 @@ namespace Project1 {
 				static_cast<System::Byte>(204)));
 			this->label3->Location = System::Drawing::Point(218, 251);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(138, 31);
+			this->label3->Size = System::Drawing::Size(143, 31);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Фамилия";
+			this->label3->Text = L"Прізвище";
 			// 
 			// button1
 			// 
@@ -111,13 +111,13 @@ namespace Project1 {
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->Location = System::Drawing::Point(314, 354);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(157, 44);
 			this->button1->TabIndex = 3;
-			this->button1->Text = L"Отправить";
+			this->button1->Text = L"Увійти";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -193,7 +193,7 @@ namespace Project1 {
 			this->Name = L"MyForm";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Аутентификация";
+			this->Text = L"Аутентифікація";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
