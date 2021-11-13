@@ -5,6 +5,7 @@
 #include "Developers.h"
 #include <string>
 #include "Functions.h"
+#include "Files.h"
 namespace Project1 {
 
 	using namespace System;
@@ -22,7 +23,6 @@ namespace Project1 {
 		String^ potok;
 		String^ name;
 		String^ surname;
-		void writetofile(StreamWriter^ sw, String^ text, int ping);
 		Main(void)
 		{
 			InitializeComponent();
@@ -236,15 +236,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 			{
 				label2->Text = ping.ToString();
 				String^ s = textBox1->Text;
-
-				FileStream^ f = gcnew FileStream(potok, FileMode::Append, FileAccess::Write);
-				StreamWriter^ sw = gcnew StreamWriter(f);
-				
 				String^ crypt = Functions::encrypt(s);
 				Sleep(ping);
-				writetofile(sw, crypt, ping);
-				sw->Close();
-				f->Close();
+				Files::writetocsv(potok, crypt, ping);
 				textBox1->Text = "";
 				MessageBox::Show("Повідомлення відправлено!");
 			}
@@ -260,7 +254,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void Main_Load(System::Object^ sender, System::EventArgs^ e) {
 	Info^ f3 = gcnew Info();
 	f3->potok = potok;
-	f3->label5->Text = name + " " + surname;
+	f3->namesurname = name + " " + surname;
 	f3->Show();
 }
 

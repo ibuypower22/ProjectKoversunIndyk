@@ -3,6 +3,7 @@
 #include <string>
 #include "Exceptions.h"
 #include "Functions.h"
+#include "Files.h"
 namespace Project1 {
 
 	using namespace System;
@@ -19,6 +20,7 @@ namespace Project1 {
 	public:
 		String^ potok;
 		bool sortflag = true;
+		String^ namesurname;
 		Info(void)
 		{
 			InitializeComponent();
@@ -40,7 +42,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button3;
-	public: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button4;
@@ -262,6 +264,7 @@ namespace Project1 {
 			   this->ShowIcon = false;
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			   this->Text = L"Інформація";
+			   this->Load += gcnew System::EventHandler(this, &Info::Info_Load);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
@@ -270,7 +273,6 @@ namespace Project1 {
 #pragma endregion
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		bool doneReading = false;
 
 		textBox1->Text = "";
 		try {
@@ -279,27 +281,8 @@ namespace Project1 {
 				throw Exceptions(1);
 			}
 			else {
-				StreamReader^ sr = gcnew StreamReader(potok);
-
 				textBox1->AppendText("Message;Ping" + Environment::NewLine);
-				while (doneReading == false)
-				{
-					String^ line = sr->ReadLine();
-					if (line == nullptr)
-					{
-						doneReading = true;
-						sr->Close();
-						break;
-					}
-
-					cli::array<String^>^ decryption = line->Split(';');
-
-					String^ check = Functions::decrypt(decryption[0]);
-					textBox1->AppendText(check + ";" + decryption[1] + Environment::NewLine);
-					delete decryption;
-
-				}
-
+				textBox1->AppendText(Files::readfromcsv(potok));
 				label2->Text = Functions::avglatency(textBox1->Text);
 			}
 		}
@@ -329,8 +312,7 @@ namespace Project1 {
 				if (searchtext == "") { throw Exceptions(3); }
 				else
 				{
-					StreamReader^ sr = gcnew StreamReader(potok);
-					Functions::search(sr, text, searchtext);
+					Functions::search(potok, text, searchtext);
 				}
 		}
 		catch (...) {}
@@ -369,5 +351,8 @@ namespace Project1 {
 		}
 		catch (...) {}
 	}
-	};
+	private: System::Void Info_Load(System::Object^ sender, System::EventArgs^ e) {
+		label5->Text = namesurname;
+	}
+};
 }

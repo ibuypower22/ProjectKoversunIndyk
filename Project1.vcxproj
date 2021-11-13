@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="Developers.cpp" />
     <ClCompile Include="Exceptions.cpp" />
+    <ClCompile Include="Files.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -130,6 +131,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="Files.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Info.h">
       <FileType>CppForm</FileType>

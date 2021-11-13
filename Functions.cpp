@@ -230,13 +230,14 @@ System::String^ Functions::avglatency(System::String^ text)
     }
 }
 
-void Functions::search(System::IO::StreamReader^ sr, System::String^ text, System::String^ searchtext)
+void Functions::search(System::String^ potok, System::String^ text, System::String^ searchtext)
 {
     int k = 0;
     System::String^ tempsentence;
     System::String^ tempping;
     bool flag = false;
     bool doneReading = false;
+    System::IO::StreamReader^ sr = gcnew System::IO::StreamReader(potok);
     while (doneReading == false)
     {
         System::String^ line = sr->ReadLine();
