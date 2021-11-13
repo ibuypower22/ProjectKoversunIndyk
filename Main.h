@@ -3,6 +3,8 @@
 #include "Info.h"
 #include "Windows.h"
 #include "Developers.h"
+#include <string>
+#include "Functions.h"
 namespace Project1 {
 
 	using namespace System;
@@ -15,29 +17,16 @@ namespace Project1 {
 
 	public ref class Main : public System::Windows::Forms::Form
 	{
-	public:
-		static Main^ obj;
-	private: System::Windows::Forms::Button^ button1;
+	
 	public:
 		String^ potok;
-	private: System::Windows::Forms::Button^ button4;
-	public:
-
 		String^ name;
 		String^ surname;
-		String^ encrypt(String^ input);
 		void writetofile(StreamWriter^ sw, String^ text, int ping);
 		Main(void)
 		{
 			InitializeComponent();
-			obj = this;
 		}
-		Main(StreamWriter^ sw)
-		{
-			InitializeComponent();
-		}
-
-	public: int latency(TextBox^ textBox);
 	protected:
 
 		~Main()
@@ -48,17 +37,16 @@ namespace Project1 {
 			}
 		}
 
-	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	public: System::Windows::Forms::Label^ label2;
-	public: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
-	private:
-
-		System::ComponentModel::Container ^components;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 
@@ -238,22 +226,31 @@ namespace Project1 {
 
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (textBox1->TextLength == 0) { MessageBox::Show("Вы не ввели сообщение, попробуйте еще раз"); }
-	else 
-	{
-		int ping = latency(textBox1);
-		label2->Text = ping.ToString();
-		String^ s = textBox1->Text;
-		FileStream^ f = gcnew FileStream(potok, FileMode::Append, FileAccess::Write);
-		StreamWriter^ sw = gcnew StreamWriter(f);
-		String^ crypt=encrypt(s);
-		Sleep(ping);
-		writetofile(sw,crypt,ping);
-		sw->Close();
-		f->Close();
-		textBox1->Text = "";
-		MessageBox::Show("Сообщение отправлено!");
+	try {
+		if (textBox1->TextLength == 0) {throw Exceptions(2);}
+		else
+		{
+			int ping = Functions::latency(textBox1->Text);
+			if (ping > 999) { label2->Text = "inf"; throw Exceptions(4); }
+			else
+			{
+				label2->Text = ping.ToString();
+				String^ s = textBox1->Text;
+
+				FileStream^ f = gcnew FileStream(potok, FileMode::Append, FileAccess::Write);
+				StreamWriter^ sw = gcnew StreamWriter(f);
+				
+				String^ crypt = Functions::encrypt(s);
+				Sleep(ping);
+				writetofile(sw, crypt, ping);
+				sw->Close();
+				f->Close();
+				textBox1->Text = "";
+				MessageBox::Show("Повідомлення відправлено!");
+			}
+		}
 	}
+	catch (...) {}
 }
 	
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -268,8 +265,12 @@ private: System::Void Main_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	int ping = latency(textBox1);
-	label2->Text = ping.ToString();
+	int ping=Functions::latency(textBox1->Text);
+	if (ping > 999) { label2->Text = "inf";}
+	else 
+	{
+		label2->Text = ping.ToString();
+	}
 }
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

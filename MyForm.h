@@ -2,10 +2,10 @@
 #include "Main.h"
 #include <iostream>
 #include "Info.h"
-
+#include "Exceptions.h"
 #include <fstream>
 #include <istream>
-
+#include "Functions.h"
 using namespace std;
 using namespace System::IO;
 
@@ -20,16 +20,11 @@ namespace Project1 {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
-		static MyForm^ obj;
-		void writetofile(StreamWriter^ sw, String^ login, String^ name, String^ surname);
-	private: System::Windows::Forms::Button^ button2;
-	public:
-		static StreamWriter^ sw;
 		MyForm(void)
 		{
 			InitializeComponent();
-			obj = this;
 		}
+		void writetofile(StreamWriter^ sw, String^ login, String^ name, String^ surname);
 	protected:
 
 		~MyForm()
@@ -44,15 +39,10 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	public: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox3;
-	private: MyForm^ parentForm;
-
-	protected:
-
-	private:
-
-		System::ComponentModel::Container ^components;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 
@@ -201,12 +191,19 @@ namespace Project1 {
 
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (textBox2->TextLength == 0 || textBox3->TextLength == 0 || textBox1->TextLength == 0) {
-			MessageBox::Show("¬ведите им€, фамилию и логин");
-		}
-		else 
-		{
-				String^ fileName = textBox1->Text+".csv";
+		try {
+			if (textBox1->TextLength == 0 || textBox2->TextLength == 0 || textBox3->TextLength == 0) {
+				throw Exceptions(5);
+			}
+			else if (textBox1->TextLength > 224) { throw Exceptions(8); }
+			else 
+			if (Functions::validation(textBox1->Text, textBox2->Text, textBox3->Text))
+			{
+				throw Exceptions(6);
+			}
+			else
+			{
+				String^ fileName = textBox1->Text + ".csv";
 				String^ login = textBox1->Text;
 				String^ name = textBox2->Text;
 				String^ surname = textBox3->Text;
@@ -221,9 +218,12 @@ namespace Project1 {
 				f2->surname = surname;
 				f2->Show();
 				Hide();
+			}
 		}
+		catch (...) {}
 	}
-
+		
+ 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
 }
