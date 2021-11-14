@@ -32,3 +32,33 @@ System::String^ Files::readfromcsv(System::String^ potok)
 	}
 	return res;
 }
+
+void Files::writetojson(System::String^ login, System::String^ name, System::String^ surname)
+{
+	pin_ptr<const wchar_t> logintows = PtrToStringChars(login);
+	pin_ptr<const wchar_t> nametows = PtrToStringChars(name);
+	pin_ptr<const wchar_t> surnametows = PtrToStringChars(surname);
+
+	wstring wlogin = logintows;
+	wstring wname = nametows;
+	wstring wsurname = surnametows;
+
+	wstring_convert<codecvt_utf8_utf16<wchar_t>> convert1;
+	string loginres = convert1.to_bytes(wlogin);
+
+	wstring_convert<codecvt_utf8_utf16<wchar_t>> convert2;
+	string nameres = convert2.to_bytes(wname);
+
+	wstring_convert<codecvt_utf8_utf16<wchar_t>> convert3;
+	string surnameres = convert3.to_bytes(wsurname);
+
+	using json = nlohmann::json;
+	json j;
+	j["login"] = loginres;
+	j["name"] = nameres;
+	j["surname"] = surnameres;
+
+	std::ofstream o("usershistory.json", ios::app);
+	o << j << endl << endl;
+	o.close();
+}

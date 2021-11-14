@@ -73,11 +73,11 @@ namespace Project1 {
 			   this->label1->AutoSize = true;
 			   this->label1->BackColor = System::Drawing::Color::Transparent;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold));
-			   this->label1->Location = System::Drawing::Point(182, 9);
+			   this->label1->Location = System::Drawing::Point(188, 9);
 			   this->label1->Name = L"label1";
-			   this->label1->Size = System::Drawing::Size(421, 31);
+			   this->label1->Size = System::Drawing::Size(408, 31);
 			   this->label1->TabIndex = 1;
-			   this->label1->Text = L"Інформація про повідомлення";
+			   this->label1->Text = L"Інформація про ваші нотатки";
 			   this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			   // 
 			   // pictureBox1
@@ -133,11 +133,11 @@ namespace Project1 {
 			   this->label4->BackColor = System::Drawing::Color::Transparent;
 			   this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
-			   this->label4->Location = System::Drawing::Point(240, 396);
+			   this->label4->Location = System::Drawing::Point(282, 396);
 			   this->label4->Name = L"label4";
-			   this->label4->Size = System::Drawing::Size(304, 31);
+			   this->label4->Size = System::Drawing::Size(221, 31);
 			   this->label4->TabIndex = 11;
-			   this->label4->Text = L"Знайти повідомлення";
+			   this->label4->Text = L"Знайти нотатку";
 			   // 
 			   // textBox2
 			   // 

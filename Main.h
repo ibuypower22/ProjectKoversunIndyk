@@ -105,11 +105,11 @@ namespace Project1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label3->Location = System::Drawing::Point(237, 305);
+			this->label3->Location = System::Drawing::Point(278, 305);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(311, 31);
+			this->label3->Size = System::Drawing::Size(228, 31);
 			this->label3->TabIndex = 4;
-			this->label3->Text = L"¬вед≥ть пов≥домленн€";
+			this->label3->Text = L"¬вед≥ть нотатку";
 			// 
 			// textBox1
 			// 

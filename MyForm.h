@@ -1,11 +1,9 @@
 #pragma once
 #include "Main.h"
-#include <iostream>
-#include "Info.h"
 #include "Exceptions.h"
-#include <fstream>
-#include <istream>
 #include "Functions.h"
+#include "Files.h"
+
 using namespace std;
 using namespace System::IO;
 
@@ -24,7 +22,6 @@ namespace Project1 {
 		{
 			InitializeComponent();
 		}
-		void writetofile(StreamWriter^ sw, String^ login, String^ name, String^ surname);
 	protected:
 
 		~MyForm()
@@ -203,17 +200,13 @@ namespace Project1 {
 			}
 			else
 			{
-				String^ fileName = textBox1->Text + ".csv";
+				//String^ fileName = textBox1->Text + ".csv";
 				String^ login = textBox1->Text;
 				String^ name = textBox2->Text;
 				String^ surname = textBox3->Text;
 				Main^ f2 = gcnew Main();
-				FileStream^ f = gcnew FileStream("users.json", FileMode::Append, FileAccess::Write);
-				StreamWriter^ sw = gcnew StreamWriter(f);
-				writetofile(sw, login, name, surname);
-				sw->Close();
-				f->Close();
-				f2->potok = fileName;
+				Files::writetojson(login, name, surname);
+				f2->potok = login + ".csv";
 				f2->name = name;
 				f2->surname = surname;
 				f2->Show();
